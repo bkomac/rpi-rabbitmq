@@ -1,12 +1,13 @@
-FROM resin/rpi-raspbian
+FROM raspbian/stretch
 
 MAINTAINER Ronny Roos <ronny@ronnyroos.com>
 
 # Add files.
 ADD bin/* /usr/local/bin/
 
-RUN apt-get install -yqq \
-rabbitmq-server 
+RUN apt-get update && \
+     apt-get install -yqq \
+     rabbitmq-server 
 
 RUN rabbitmq-plugins enable rabbitmq_management && \
 	echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config && \
