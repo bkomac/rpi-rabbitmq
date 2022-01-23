@@ -5,8 +5,7 @@ MAINTAINER Ronny Roos <ronny@ronnyroos.com>
 # Add files.
 ADD bin/* /usr/local/bin/
 
-RUN apt-get update && \
-apt-get install -yqq \
+RUN apt-get install -yqq \
 rabbitmq-server 
 
 RUN rabbitmq-plugins enable rabbitmq_management && \
