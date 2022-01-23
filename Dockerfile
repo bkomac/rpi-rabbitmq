@@ -1,4 +1,4 @@
-FROM raspbian/stretch
+FROM balenalib/raspberry-pi:buster
 
 MAINTAINER Ronny Roos <ronny@ronnyroos.com>
 
